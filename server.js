@@ -1,6 +1,6 @@
 const express = require('express');
 
-const app = express();
+const app = express(); // server ka instance create kra hae 
 
 app.get("/", (req, res) => {
 
@@ -12,5 +12,5 @@ app.get("/about", (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("server is running on port 3000");
-});
+    console.log(`server is running on port 3000`); //server ko start krne kae liye 3000 is the port number 
+}); 
