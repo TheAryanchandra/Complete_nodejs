@@ -1,25 +1,35 @@
-import {useRef,useState,useEffect} from 'react'
+import { useState } from 'react'
 
 const Feed = () => {
-    const [posts,setposts] = useState([
+    const [posts, setposts] = useState([
         {
-            id:1,
-            caption:"hello baabbbyyyy",
-            image:"https://images.unsplash.com/photo-1773332598289-ed0444ad1d6f?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            id: 1,
+            user: "aryanchandra_",
+            avatar: "https://i.pravatar.cc/40?img=12",
+            caption: "hello baabbbyyyy 🌸",
+            image: "https://images.unsplash.com/photo-1773332598289-ed0444ad1d6f?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            likes: 128,
         }
     ]);
 
     return (
         <section className="feed">
             <div className="feed-container">
-                <section>
-                    {posts.map((post) => (
-                        <div className="post" key={post.id}>
-                            <img src={post.image} alt={post.caption} />
-                            <p>{post.caption}</p>
+                {posts.map((post) => (
+                    <div className="post" key={post.id}>
+                        <div className="post-header">
+                            <img className="post-avatar" src={post.avatar} alt={post.user} />
+                            <span className="post-username">{post.user}</span>
                         </div>
-                    ))}
-                </section>
+                        <img className="post-image" src={post.image} alt={post.caption} />
+                        <div className="post-actions">
+                            <button className="post-btn">❤️ {post.likes}</button>
+                            <button className="post-btn">💬 Comment</button>
+                            <button className="post-btn">🔗 Share</button>
+                        </div>
+                        <p className="post-caption"><strong>{post.user}</strong> {post.caption}</p>
+                    </div>
+                ))}
             </div>
         </section>
     )
