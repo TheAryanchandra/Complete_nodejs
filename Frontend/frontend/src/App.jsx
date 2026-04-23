@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Createpost from './pages/createpost'
-import feed from './pages/feed'
+import Feed from './pages/feed'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <Route path="/" element={<h1>hellloooo babuuu </h1>}/>
         <Route path="/aboutus" element={<h1>hellloooo babuuu </h1>}/>
         <Route path="/createpost" element={<Createpost/>} />
-        <Route path="/feed" element={<feed/>} />
+        <Route path="/feed" element={<Feed/>} />
       </Routes>
     </Router>
   )
