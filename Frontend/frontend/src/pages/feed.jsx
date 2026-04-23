@@ -15,10 +15,17 @@ const Feed = () => {
     ]);
 
     useEffect(() => {
+        console.log("useEffect running - calling API...");
         axios.get("http://localhost:3000/posts")
         .then((response) => {
-            console.log(response.data);
+            console.log("Full response:", response.data);
+            console.log("Posts array:", response.data.posts);
+            setposts(response.data.posts);
         })
+        .catch((error) => {
+            console.error("❌ API FAILED:", error.message);
+            console.error("Check: Is backend running on port 3000?");
+        });
     },[])
 
     return (
@@ -28,7 +35,7 @@ const Feed = () => {
                     <h2 className="feed-title">For You</h2>
                 </div>
                 {posts.map((post) => (
-                    <div className="post" key={post.id}>
+                    <div className="post" key={post._id}>
                         <div className="post-header">
                             <img className="post-avatar" src={post.avatar} alt={post.user} />
                             <span className="post-username">{post.user}</span>
