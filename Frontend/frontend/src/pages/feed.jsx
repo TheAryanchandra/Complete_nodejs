@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+import axios from 'axios';
+
 
 const Feed = () => {
     const [posts, setposts] = useState([
@@ -12,9 +14,19 @@ const Feed = () => {
         }
     ]);
 
+    useEffect(() => {
+        axios.get("http://localhost:3000/posts")
+        .then((response) => {
+            console.log(response.data);
+        })
+    },[])
+
     return (
         <section className="feed">
             <div className="feed-container">
+                <div className="feed-header">
+                    <h2 className="feed-title">For You</h2>
+                </div>
                 {posts.map((post) => (
                     <div className="post" key={post.id}>
                         <div className="post-header">
