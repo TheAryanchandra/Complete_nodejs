@@ -1,12 +1,13 @@
 import React from 'react'
 
+
 const createpost = () => {
   return (
     <section>
-        <div class="Create-Post">
+        <div className="Create-Post">
         <h1>Create Post</h1>
         <input type="file" name='image' accept="image/*"/>
-        <input type="text" name="caption" required placeholder='caption' />
+        <input type="text" name="caption" required placeholder='write a caption' />
         <button type='submit'>Post</button>
         </div>
     </section>
