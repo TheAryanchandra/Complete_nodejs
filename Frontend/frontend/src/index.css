@@ -8,5 +8,7 @@ html,body,#root
 {
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: white;
+    color: black;
+    font-family: system-ui, -apple-system, sans-serif;
 }
